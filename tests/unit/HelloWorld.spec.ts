@@ -9,13 +9,13 @@ describe('HelloWorld.vue', () => {
     })
     expect(wrapper.text()).toMatch(msg)
   })
-  it('模拟点击事件', () => {
-    const wrapper = shallowMount(HelloWorld)
+  // it('模拟点击事件', () => {
+  //   const wrapper = shallowMount(HelloWorld)
 
-    wrapper.find('.hello').trigger('click')
+  //   wrapper.find('.hello').trigger('click')
 
-    setTimeout(() => {
-      expect(wrapper.find('.msg').text()).toMatch(`8889`)
-    })
-  })
+  //   setTimeout(() => {
+  //     expect(wrapper.find('.msg').text()).toMatch(`8889`)
+  //   })
+  // })
 })

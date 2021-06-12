@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <div>
+      <div v-for="(item, index) in repositories" :key="index">{{ item }}</div>
+    </div>
     <img class="click-img" @click="clickimg" ref="img" alt="Vue logo" src="../assets/logo.png" />
     你好啊
     <HelloWorld :msg="msg" />
@@ -25,12 +28,23 @@ import { envConfig } from '@/config/index'
 /* 接口 */
 import { listPage } from '@/service/home/home'
 import { listType, ResponseData } from '@/type'
-// import $ from 'n-zepto'
+
+// setup
+import HomeMethod from '@/views/HomeSetup/HomeMethod'
 
 export default defineComponent({
   name: 'Home',
   components: {
     HelloWorld
+  },
+  setup() {
+    // 改变内容逻辑
+    let { repositories, setUepositor } = HomeMethod()
+
+    return {
+      repositories,
+      setUepositor
+    }
   },
   data() {
     return {
@@ -48,6 +62,10 @@ export default defineComponent({
     })
   },
   mounted() {
+    setTimeout(() => {
+      this.setUepositor(['他', '是', '大', '坏', '蛋'])
+    }, 1000)
+
     /* api接口测试 */
     // this.apiTest()
     /* 全局变量测试 */
