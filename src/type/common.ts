@@ -1,11 +1,10 @@
-import { AxiosResponse } from 'axios'
+import { AxiosResponse } from "axios";
 
 export interface ResponseData extends AxiosResponse {
-  code?: string
-  message?: string
-  loginUrl?: string
+  code?: number
+  msg?: string
+  update_time?: number
 }
-
 export interface callApiHeaders {
   'content-type'?: string
 }

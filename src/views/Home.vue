@@ -11,10 +11,6 @@
 import { defineComponent } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 
-export interface accountState {
-  itemsSon?: Array<any>
-}
-
 /* vuex */
 import { mapState, createNamespacedHelpers } from 'vuex'
 const accountStore = createNamespacedHelpers('account')
@@ -28,6 +24,7 @@ import { envConfig } from '@/config/index'
 
 /* 接口 */
 import { listPage } from '@/service/home/home'
+import { listType, ResponseData } from '@/type'
 // import $ from 'n-zepto'
 
 export default defineComponent({
@@ -41,13 +38,13 @@ export default defineComponent({
     }
   },
   computed: {
-    /* 根模块的storej */
+    /* 根模块的store */
     ...mapState({
-      root: (state: any) => state.root
+      root: (state: any): Array<string | number> => state.root
     }),
     /* 子模块的store */
     ...accountStore.mapState({
-      items: (state: any) => state.items
+      items: (state: any): Array<string | number> => state.items
     })
   },
   mounted() {
@@ -91,8 +88,11 @@ export default defineComponent({
 
     apiTest() {
       const json = { test: 1 }
-      listPage(json).then((res: any) => {
+      listPage(json).then((res: ResponseData) => {
         console.log(res)
+
+        const data: Array<listType> = res.data
+        console.log(data)
       })
     },
 

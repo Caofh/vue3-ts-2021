@@ -1,8 +1,8 @@
 /* 封装axios */
 
-import axios, { AxiosInstance, AxiosPromise } from 'axios' // 文档：http://www.axios-js.com/zh-cn/docs/#axios-create-config
+import axios, { AxiosInstance, AxiosPromise, AxiosResponse } from 'axios' // 文档：http://www.axios-js.com/zh-cn/docs/#axios-create-config
 import Qs from 'qs'
-import { callApiHeaders } from '@/type'
+import { callApiHeaders, ResponseData } from '@/type'
 
 /* 自定义content-type方式示例如下，默认'content-type': 'application/json'
   const hostDev = baseHost.hostDev
@@ -70,13 +70,13 @@ const callApi = (apiRoot = '/' as string, headers = {} as callApiHeaders): Axios
 
   // 添加响应拦截器
   axiosObj.interceptors.response.use(
-    (res) => {
-      // const config: any = res.config; // 请求相关信息
-      const data = res.data // 返回数据
+    (res: AxiosResponse) => {
+      // const config: any = res.config // 请求相关信息
+      const data: ResponseData = res.data // 返回数据
       const code = data.code || '' // 兼容code码
 
       // 判断登录信息是否过期
-      if (code == 1006 || code == 103) {
+      if (code === 1006 || code === 103) {
         // console.log("---------");
         // console.log("问题接口：" + (config.baseURL + config.url));
         // console.log("问题返回：");

@@ -13,3 +13,4 @@ declare module 'n-zepto'
 interface Window {
     $: any;
 }
+

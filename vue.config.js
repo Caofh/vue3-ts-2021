@@ -27,10 +27,10 @@ module.exports = {
           disableHostCheck: true,
 
           // eslint检测影响代码编译，注释调不会影响代码编译
-          overlay: {
-            warnings: true,
-            errors: true
-          }
+          // overlay: {
+          //   warnings: true,
+          //   errors: true
+          // }
         }
       }
     } else {
