@@ -5,7 +5,6 @@ import { Store } from 'vuex'
 import VueRouter from 'vue-router'
 import { Route } from 'vue-router'
 import { Emitter } from 'mitt'
-// import lodash from 'lodash'
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
