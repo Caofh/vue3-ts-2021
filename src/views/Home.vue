@@ -18,12 +18,15 @@ import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 import { mapState, createNamespacedHelpers } from 'vuex'
 const accountStore = createNamespacedHelpers('account')
 
+/* 项目配置 */
+import { envConfig } from '@/config/index'
+
+/* 自定义方法 */
 import { AppFactory } from '@/utils/appFactory'
+import { initAsyn_promise, initAsynCss_promise } from '@/utils/loadJs'
 
 /* 模版 */
 import About from '@/views/About.vue'
-
-import { envConfig } from '@/config/index'
 
 /* 接口 */
 import { listPage } from '@/service/home/home'
@@ -66,6 +69,8 @@ export default defineComponent({
       this.setUepositor(['他', '是', '大', '坏', '蛋'])
     }, 1000)
 
+    // 页面级别动态加载js、css方法
+    // this.lazyLoadResource()
     /* api接口测试 */
     // this.apiTest()
     /* 全局变量测试 */
@@ -142,6 +147,16 @@ export default defineComponent({
 
       window.$('body').prepend(`<div id='div'></div>`)
       about.mount('#div')
+    },
+
+    lazyLoadResource() {
+      initAsyn_promise(['swiper']).then(() => {
+        console.log('swiper.min.js加载完毕')
+      })
+
+      initAsynCss_promise(['swiperCss']).then(() => {
+        console.log('swiper.min.css加载完毕')
+      })
     }
   }
 })
