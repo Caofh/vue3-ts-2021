@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build_sit": "vue-cli-service build --mode sit",
-    "build_uat": "vue-cli-service build --mode uat",
+    "build_test": "vue-cli-service build --mode test",
     "build_pre": "vue-cli-service build --mode pre",
     "build_prod": "vue-cli-service build --mode prod",
     "report": "cross-env VUE_APP_REPORT=report vue-cli-service build",

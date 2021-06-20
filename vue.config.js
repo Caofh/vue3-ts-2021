@@ -5,6 +5,8 @@ const webpack = require('webpack')
 let ENV = process.env.VUE_APP_ENV
 let PUBLICPATH = process.env.VUE_APP_PUBLICPATH
 
+console.log(ENV)
+
 // console.log(process.env.VUE_APP_ENV)
 
 module.exports = {

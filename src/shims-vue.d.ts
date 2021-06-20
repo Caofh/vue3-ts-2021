@@ -1,5 +1,5 @@
 /* eslint-disable */
-/* 定义项目内引入.vue文件类型 */
+/* 定义ts项目内引入.vue文件类型 */
 
 declare module '*.vue' {
   import type { Vue, DefineComponent } from 'vue'

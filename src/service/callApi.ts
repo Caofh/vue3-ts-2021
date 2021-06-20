@@ -104,7 +104,18 @@ const callApi = (apiRoot = '/' as string, headers = {} as callApiHeaders): Axios
   return axiosObj
 }
 
-// 请求接口中间层
+/* 请求接口中间层
+  const host = 'https://www.baidu.com'
+  const result = service(host, {
+    url: url.getMeInfo,
+    method: 'get',
+    data: {
+      id: 1,
+      content: '我是上传接口的数据'
+    }
+  });
+  返回一个axios的promise
+*/
 const service = (baseURL: string, data = {}): AxiosPromise<any> => {
   const axios = callApi(baseURL)
   return axios(data)

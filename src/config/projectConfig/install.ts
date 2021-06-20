@@ -1,13 +1,11 @@
 import local from './local'
-import sit from './sit'
-import uat from './uat'
+import test from './test'
 import pre from './pre'
 import prod from './prod'
 
 export default {
   local,
-  sit,
-  uat,
+  test,
   pre,
   prod
 } as any
