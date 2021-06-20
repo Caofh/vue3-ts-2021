@@ -3,10 +3,12 @@
     <div>
       <div v-for="(item, index) in repositories" :key="index">{{ item }}</div>
     </div>
-    <img class="click-img" @click="clickimg" ref="img" alt="Vue logo" src="../assets/logo.png" />
+    <img class="click-img" @click="clickimg" ref="img" alt="Vue logo" src="@/assets/logo.png" />
     你好啊
     <HelloWorld :msg="msg" />
     <div class="msg">{{ msg || '' }}</div>
+
+    <!-- <SvgIcon></SvgIcon> -->
   </div>
 </template>
 
@@ -22,6 +24,7 @@ const accountStore = createNamespacedHelpers('account')
 import { envConfig } from '@/config/index'
 
 /* 自定义方法 */
+
 import { AppFactory } from '@/utils/appFactory'
 import { initAsyn_promise, initAsynCss_promise } from '@/utils/loadJs'
 
@@ -33,12 +36,15 @@ import { listPage } from '@/service/home/home'
 import { listType, ResponseData } from '@/type'
 
 // setup
-import HomeMethod from '@/views/HomeSetup/HomeMethod'
+import HomeMethod from '@/views/home/homeSetup/HomeMethod'
+
+// import SvgIcon from '@/assets/svg/svg.vue'
 
 export default defineComponent({
   name: 'Home',
   components: {
     HelloWorld
+    // SvgIcon
   },
   setup() {
     // 改变内容逻辑
@@ -54,6 +60,12 @@ export default defineComponent({
       msg: '你好啊!'
     }
   },
+  props: {
+    pro: {
+      type: String,
+      default: '123'
+    }
+  },
   computed: {
     /* 根模块的store */
     ...mapState({
@@ -62,15 +74,21 @@ export default defineComponent({
     /* 子模块的store */
     ...accountStore.mapState({
       items: (state: any): Array<string | number> => state.items
-    })
+    }),
+    b(): string {
+      console.log(this.pro)
+      return '123'
+    }
   },
   mounted() {
     setTimeout(() => {
       this.setUepositor(['他', '是', '大', '坏', '蛋'])
     }, 1000)
 
+    // console.log(this.b)
+
     // 页面级别动态加载js、css方法
-    this.lazyLoadResource()
+    // this.lazyLoadResource()
     /* api接口测试 */
     // this.apiTest()
     /* 全局变量测试 */

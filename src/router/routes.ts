@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 
 /* 模版 */
-import Home from '@/views/Home.vue'
+import Home from '@/views/home/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {

@@ -89,4 +89,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 九 vscode编辑器配置文件失焦时，自动格式化文件，保证整个项目组代码风格、代码规范统一。[参考教程](https://note.youdao.com/s/H23AwUav)
 ### 十 组件<style></style>必须加上scoped，如需覆盖第三方框架样式，自行增加::v-deep(#ss) {}；来覆盖第三方插件样式。
 ### 十一 如有dom操作需求，项目已经自动引入n-zepto.js（vue.config.js中已配置，十几k很小，轻量化jquery）。可以使用。也可以使用原生dom操作，不做限制。
+### 十二 文件夹命名：项目文件夹用小驼峰命名，文件命名：.vue文件用大驼峰，其他文件均用小驼峰
 
