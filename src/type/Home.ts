@@ -7,4 +7,3 @@ export interface listType {
   uid: number
   update_time: string
 }
-  

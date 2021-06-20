@@ -1,4 +1,6 @@
-const webpack = require("webpack");
+/* eslint-disable */
+
+const webpack = require('webpack')
 
 let ENV = process.env.VUE_APP_ENV
 let PUBLICPATH = process.env.VUE_APP_PUBLICPATH
@@ -24,7 +26,7 @@ module.exports = {
           port: 8080,
           open: true, // 构建完成自动打开浏览器
           // https: true,
-          disableHostCheck: true,
+          disableHostCheck: true
 
           // eslint检测影响代码编译，注释调不会影响代码编译
           // overlay: {
@@ -57,12 +59,12 @@ module.exports = {
     })
 
     // 全局配置node_modules中的模块，使用时无需引入
-    config.plugin("provide").use(webpack.ProvidePlugin, [
+    config.plugin('provide').use(webpack.ProvidePlugin, [
       {
-        "window.$": "n-zepto",
-        "window.Zepto": "n-zepto",
-      },
-    ]);
+        'window.$': 'n-zepto',
+        'window.Zepto': 'n-zepto'
+      }
+    ])
 
     config.module
       .rule('images')

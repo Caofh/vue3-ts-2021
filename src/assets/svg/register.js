@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 function context(basedir, directory, useSubdirectories, regExp) {
+  console.log(regExp)
+
   const path = require('path')
   const fs = require('fs')
   function enumerateFiles(basedir, dir) {

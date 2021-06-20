@@ -70,7 +70,7 @@ export default defineComponent({
     }, 1000)
 
     // 页面级别动态加载js、css方法
-    // this.lazyLoadResource()
+    this.lazyLoadResource()
     /* api接口测试 */
     // this.apiTest()
     /* 全局变量测试 */

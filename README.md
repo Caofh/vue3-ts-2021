@@ -1,26 +1,34 @@
 # v3-ts-2021
 
-## Project setup
+### 依赖安装
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 本地编辑热更新
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 四种环境发布
 ```
-npm run build
+npm run build_sit // sit环境
+npm run build_uat // uat环境
+npm run build_pre // pre环境(预发布)
+npm run build_prod // prod环境(线上)
 ```
 
-### Run your unit tests
+### 打印项目报告（依赖模块大小报告，性能优化可参考）
+```
+npm run report
+```
+
+### 单元测试（含有代码覆盖率报告）
 ```
 npm run test:unit
 ```
 
-### Run your end-to-end tests
+### 端到端测试
 ```
 npm run test:e2e
 ```

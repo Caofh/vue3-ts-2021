@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* 定义项目内引入.vue文件类型 */
 
 declare module '*.vue' {

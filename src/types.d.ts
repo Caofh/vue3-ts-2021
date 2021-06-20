@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* 定义项目内import引入的文件类型 */
 
 declare module '*.svg'
@@ -11,6 +12,5 @@ declare module '*.js'
 declare module 'n-zepto'
 
 interface Window {
-    $: any;
+  $: any
 }
-

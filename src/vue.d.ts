@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* 定义vue属性扩展数据结构 */
 
 import { ComponentCustomProperties } from 'vue'
