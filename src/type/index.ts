@@ -1,4 +1,4 @@
 export * from './common'
 export * from './store'
-export * from './Home'
+export * from './views/Home'
 export * from './loadJs'

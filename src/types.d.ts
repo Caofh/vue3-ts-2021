@@ -10,6 +10,7 @@ declare module '*.bmp'
 declare module '*.tiff'
 declare module '*.js'
 declare module 'n-zepto'
+declare module 'js-cookie'
 
 interface Window {
   $: any

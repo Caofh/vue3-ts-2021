@@ -1,10 +1,13 @@
 <template>
   <div class="home">
+    <div>svg示例：</div>
     <svg-icon icon-class="sheet-add" />
+    <svg-icon icon-class="excel-bold" />
+    <div>-----</div>
     <div>
-      <div v-for="(item, index) in repositories" :key="index">{{ item }}</div>
+      <span v-for="(item, index) in repositories" :key="index">{{ item }}</span>
     </div>
-    <img class="click-img" @click="clickimg" ref="img" alt="Vue logo" src="@/assets/logo.png" />
+    <img class="click-img" @click="clickimg" ref="img" alt="Vue logo" src="@/assets/images/logo.png" />
     你好啊
     <HelloWorld :msg="msg" />
     <div class="msg">{{ msg || '' }}</div>
@@ -68,10 +71,8 @@ export default defineComponent({
   },
   mounted() {
     setTimeout(() => {
-      this.setUepositor(['他', '是', '大', '坏', '蛋'])
+      this.setUepositor(['动', '感', '光', '波'])
     }, 1000)
-
-    // console.log(this.b)
 
     // 页面级别动态加载js、css方法
     // this.lazyLoadResource()
@@ -87,6 +88,8 @@ export default defineComponent({
     // this.eventBusTest()
     /* lodash测试 */
     // this.lodashTest()
+    /* cookie测试 */
+    // this.cookieTest()
   },
   methods: {
     /* 子模块的store */
@@ -161,6 +164,13 @@ export default defineComponent({
       initAsynCss_promise(['swiperCss']).then(() => {
         console.log('swiper.min.css加载完毕')
       })
+    },
+
+    cookieTest() {
+      this.$library.setCookie('knowledgeBase_value', 'abcd')
+      // this.$library.removeCookie('knowledgeBase_value')
+      const cookieValue = this.$library.getCookie('knowledgeBase_value')
+      console.log('cookie:', cookieValue)
     }
   }
 })

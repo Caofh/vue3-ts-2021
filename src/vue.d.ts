@@ -14,5 +14,6 @@ declare module '@vue/runtime-core' {
     $route: Route
     $Bus: Emitter
     $lodash: any
+    $library: any
   }
 }

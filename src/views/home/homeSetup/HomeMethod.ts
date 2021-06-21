@@ -1,6 +1,9 @@
+import { useUserRepositoriesType } from '@/type'
 import { ref, onMounted, watch } from 'vue'
 
-export default function useUserRepositories() {
+
+
+export default function useUserRepositories(): useUserRepositoriesType {
   const repositories = ref(['我', '是', '大', '好', '人'])
 
   onMounted(() => {
