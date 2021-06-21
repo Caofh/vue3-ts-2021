@@ -4,10 +4,7 @@ const webpack = require('webpack')
 
 let ENV = process.env.VUE_APP_ENV
 let PUBLICPATH = process.env.VUE_APP_PUBLICPATH
-
-console.log(ENV)
-
-// console.log(process.env.VUE_APP_ENV)
+// console.log(ENV)
 
 module.exports = {
   // 配置生成dist里面static的cdn资源路径（测试环境为/，正式环境走cdn路径）
@@ -101,6 +98,10 @@ module.exports = {
       .test(/\.tpl$/i)
       .use('underscore-template-loader')
       .loader('underscore-template-loader')
+
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule.use('svg-sprite-loader').loader('svg-sprite-loader')
 
     // npm run report；打印app.js的模块报告，查看各个模块；
     if (process.env.VUE_APP_REPORT === 'report') {

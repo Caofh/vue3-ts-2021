@@ -4,8 +4,10 @@
   </svg>
 </template>
 
-<script lang="ts">
-export default {
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'SvgIcon',
   props: {
     iconClass: {
@@ -19,11 +21,11 @@ export default {
   },
   computed: {
     // 监听iconClass的变化而改变iconName
-    iconName(): string {
+    iconName() {
       return `#${this.iconClass}`
     },
     // 监听className的变化而改变svgClass
-    svgClass(): string {
+    svgClass() {
       if (this.className) {
         return 'svg-icon ' + this.className
       } else {
@@ -31,7 +33,7 @@ export default {
       }
     }
   }
-}
+})
 </script>
 
 <style scoped>

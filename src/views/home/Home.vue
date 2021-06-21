@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <svg-icon icon-class="sheet-add" />
     <div>
       <div v-for="(item, index) in repositories" :key="index">{{ item }}</div>
     </div>
@@ -7,8 +8,6 @@
     你好啊
     <HelloWorld :msg="msg" />
     <div class="msg">{{ msg || '' }}</div>
-
-    <!-- <SvgIcon></SvgIcon> -->
   </div>
 </template>
 
@@ -38,13 +37,10 @@ import { listType, ResponseData } from '@/type'
 // setup
 import HomeMethod from '@/views/home/homeSetup/HomeMethod'
 
-// import SvgIcon from '@/assets/svg/svg.vue'
-
 export default defineComponent({
   name: 'Home',
   components: {
     HelloWorld
-    // SvgIcon
   },
   setup() {
     // 改变内容逻辑
@@ -60,12 +56,6 @@ export default defineComponent({
       msg: '你好啊!'
     }
   },
-  props: {
-    pro: {
-      type: String,
-      default: '123'
-    }
-  },
   computed: {
     /* 根模块的store */
     ...mapState({
@@ -74,11 +64,7 @@ export default defineComponent({
     /* 子模块的store */
     ...accountStore.mapState({
       items: (state: any): Array<string | number> => state.items
-    }),
-    b(): string {
-      console.log(this.pro)
-      return '123'
-    }
+    })
   },
   mounted() {
     setTimeout(() => {
