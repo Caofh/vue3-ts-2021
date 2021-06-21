@@ -1,6 +1,24 @@
 # v3-ts-2021
 
-## 一：指令
+
+## 一：安装
+### 下载脚手架工具
+```
+npm install topay-cli -g
+```
+### 查看脚手架版本，验证安装成功
+```
+tp -v
+```
+### 初始化vue3.0 + ts + vue-x + vue-router项目
+```
+tp init ***(你的项目名称)
+```
+### 初始化项目依赖
+```
+cd ***(刚才输入的项目名) && npm i
+```
+## 二：指令
 ### 依赖安装
 ```
 npm install
@@ -41,7 +59,7 @@ npm run lint
 ### vue.config.js自定义webpack配置文档
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## 二：目录结构
+## 三：目录结构
 ### 一 public：不参与打包的部分，构建后会直接原样搬到dist中。
 ### 二 src：源码部分.
 #### 1.src/assets：项目静态资源：svg、图片、公共css、字体...
@@ -77,7 +95,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 十七 vue.config.js ：自定义webpack配置（[参考文档](https://cli.vuejs.org/config/)）
 ### 十八 README.md ：项目介绍markdown文档
 
-## 三 项目注意要点
+## 四 项目注意要点
 ### 一 项目多用setup，以逻辑为中心组织代码。参考Home.vue中的示例
 ### 二 utils/appFactory.ts，可以作为模版引擎使用，参考Home.vue中的示例
 ### 三 utils/eventHub.ts，事件总线：尽量少用，但是非常规场景可以使用此方法解决问题。参考Home.vue中的示例
