@@ -1,7 +1,5 @@
 /* eslint-disable */
 
-// const webpack = require('webpack')
-
 let ENV = process.env.VUE_APP_ENV
 let PUBLICPATH = process.env.VUE_APP_PUBLICPATH
 // console.log(ENV)
@@ -56,14 +54,6 @@ module.exports = {
     config.optimization.splitChunks({
       cacheGroups: {}
     })
-
-    // 全局配置node_modules中的模块，使用时无需引入
-    // config.plugin('provide').use(webpack.ProvidePlugin, [
-    //   {
-    //     'window.$': 'n-zepto',
-    //     'window.Zepto': 'n-zepto'
-    //   }
-    // ])
 
     config.module
       .rule('images')
