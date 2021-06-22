@@ -106,7 +106,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 八 开发过程中，针对function的输入、输出、对象，一定要定义数据类型，放到type文件夹中，有利于后续维护、追溯数据结构和避免一些项目隐性问题。参考Home.vue中的示例
 ### 九 vscode编辑器配置文件失焦时，自动格式化文件，保证整个项目组代码风格、代码规范统一。[参考教程](https://note.youdao.com/s/H23AwUav)
 ### 十 组件<style></style>必须加上scoped，如需覆盖第三方框架样式，自行增加::v-deep(#ss) {}；来覆盖第三方插件样式。
-### 十一 如有dom操作需求，项目已经自动引入n-zepto.js（vue.config.js中已配置，十几k很小，轻量化jquery）。可以使用。也可以使用原生dom操作，不做限制。按团队统一规则。
+### 十一 如有dom操作需求，使用原生dom操作。
 ### 十二 文件夹命名：项目文件夹用小驼峰命名，文件命名：.vue文件用大驼峰，其他文件均用小驼峰
 ### 十三 图片类资源使用顺序(优先级从前到后)：svg > jpg > png > base64
 ### 十四 icon尽量使用svg文件，本项目使用svg-sprite-loader自动加载svg文件。参考Home.vue中的示例
