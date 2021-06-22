@@ -112,4 +112,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 十四 icon尽量使用svg文件，本项目使用svg-sprite-loader自动加载svg文件。参考Home.vue中的示例
 ### 十五 本项目使用ts，新建.vue单文件组件需要使用defineComponent将vue输出包一层，参考Home.vue中的示例
 ### 十六 增删改查 localStorage、cookie统一使用library中统一封装的方法（cookie使用的是js-cookie，文档：https://github.com/js-cookie/js-cookie）
+### node版本使用：v14.16.1（或以上）
 
