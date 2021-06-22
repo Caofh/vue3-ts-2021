@@ -38,7 +38,7 @@ import { listPage } from '@/service/home/home'
 import { listType, ResponseData } from '@/type'
 
 // setup
-import HomeMethod from '@/views/home/homeSetup/HomeMethod'
+import HomeMethod from '@/views/home/homeSetup/homeMethod'
 
 export default defineComponent({
   name: 'Home',
