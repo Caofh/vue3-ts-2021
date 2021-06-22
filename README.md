@@ -103,7 +103,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 五 lodash，尽量使用，含丰富的日常开发方法（好用）。（[文档](https://www.lodashjs.com/)）。参考Home.vue中的示例 
 ### 六 项目环境配置文件分两部分：1.根目录中的四个是构建所需环境配置，2.config/projectConfig是代码执行阶段所需环境配置。两者不建议完全通用。需要注意。
 ### 七 store中的vuex字段一定要分页面建立不同的module，方便日后维护。参考Home.vue中的示例
-### 八 开发过程中，真多function的输入、输出、对象，一定要定义数据类型，放到type文件夹中，有利于后续维护、追溯数据结构和避免一些项目隐性问题。参考Home.vue中的示例
+### 八 开发过程中，针对function的输入、输出、对象，一定要定义数据类型，放到type文件夹中，有利于后续维护、追溯数据结构和避免一些项目隐性问题。参考Home.vue中的示例
 ### 九 vscode编辑器配置文件失焦时，自动格式化文件，保证整个项目组代码风格、代码规范统一。[参考教程](https://note.youdao.com/s/H23AwUav)
 ### 十 组件<style></style>必须加上scoped，如需覆盖第三方框架样式，自行增加::v-deep(#ss) {}；来覆盖第三方插件样式。
 ### 十一 如有dom操作需求，项目已经自动引入n-zepto.js（vue.config.js中已配置，十几k很小，轻量化jquery）。可以使用。也可以使用原生dom操作，不做限制。按团队统一规则。

@@ -128,7 +128,6 @@ export default defineComponent({
 
     globalTest() {
       console.log(envConfig)
-      console.log(window.$)
 
       console.log(this.$store)
       console.log(this.$router)
@@ -148,11 +147,14 @@ export default defineComponent({
     async addTemplate() {
       await this.$nextTick()
 
-      console.log(window.$)
       console.log('动态注入html元素')
       const about = AppFactory(About)
 
-      window.$('body').prepend(`<div id='div'></div>`)
+      // body内前面追加一个id为div的div元素
+      const node = document.createElement('div')
+      node.setAttribute('id', 'div')
+      document.querySelectorAll('body')[0].insertBefore(node, document.querySelectorAll('body')[0].firstChild)
+
       about.mount('#div')
     },
 

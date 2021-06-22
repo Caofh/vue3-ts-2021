@@ -13,5 +13,5 @@ declare module 'n-zepto'
 declare module 'js-cookie'
 
 interface Window {
-  $: any
+  // $: any
 }
