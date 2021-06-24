@@ -10,12 +10,13 @@
     <img class="click-img" @click="clickimg" ref="img" alt="Vue logo" src="@/assets/images/logo.png" />
     你好啊
     <HelloWorld :msg="msg" />
-    <div class="msg">{{ msg || '' }}</div>
+    <div class="msg">{{ name.name || '' }}</div>
+    <div class="msg">{{ name1.name || '' }}</div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, toRaw, markRaw } from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 
 /* vuex */
@@ -56,7 +57,17 @@ export default defineComponent({
   },
   data() {
     return {
-      msg: '你好啊!'
+      msg: '你好啊!',
+      userInfo: {
+        name: '方晖',
+        age: 1000
+      },
+      name: {
+        name: '' as string
+      },
+      name1: {
+        name: '' as string
+      }
     }
   },
   computed: {
@@ -90,6 +101,8 @@ export default defineComponent({
     // this.lodashTest()
     /* cookie测试 */
     // this.cookieTest()
+    /* vue3.0特性：深度响应proxy测试 */
+    this.v3ProxyTest()
   },
   methods: {
     /* 子模块的store */
@@ -99,6 +112,44 @@ export default defineComponent({
 
     clickimg() {
       this.msg = '哈哈哈呵呵呵'
+    },
+
+    v3ProxyTest() {
+      /**
+       * 文档：
+       * https://v3.cn.vuejs.org/api/basic-reactivity.html#toraw
+       * https://v3.cn.vuejs.org/api/basic-reactivity.html#markraw
+       * https://v3.cn.vuejs.org/api/basic-reactivity.html#shallowreactive
+       */
+
+      // 一。vue3.0针对对象、数组等引用类型进行深度响应 => 打印出来为proxy包的一层，并非原始数据，正常使用没问题。但是第三方的一些库的示例不应该这样。
+      console.log('一')
+      const name = { name: '大大大' }
+      this.name = name
+      console.log(this.name)
+      setTimeout(() => {
+        this.name.name = '花擦'
+        console.log(this.name)
+      }, 1000)
+      console.log('一')
+
+      //  二。利用toRaw逃生舱得到原始数据
+      console.log('二')
+      console.log(this.userInfo)
+      console.log(toRaw(this.userInfo))
+      console.log('二')
+
+      //  三。利用markRaw方法定义非深度响应的依赖属性，改变嵌套深层的数据是，不会自动渲染视图。类似于2.0没用proxy重构之前的特性。
+      console.log('三')
+      const name1 = markRaw({ name: '大大大' })
+      this.name1 = name1
+      console.log(this.name1)
+      setTimeout(() => {
+        this.name1.name = '花擦'
+        console.log(this.name1)
+        this.$forceUpdate()
+      }, 1000)
+      console.log('三')
     },
 
     lodashTest() {
