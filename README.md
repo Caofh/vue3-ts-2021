@@ -80,11 +80,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### 1.tests/e2e：端到端测试文件夹，可忽略。
 #### 2.tests/unit：单元测试文件夹（执行后，含代码覆盖率报告），核心模块书写单元测试在这里面开发。
 ### 四 .browserslistrc：兼容目标浏览器([详解](https://blog.csdn.net/weixin_42418196/article/details/112216046))
-### 五 .env.local ：本地构建配置
-### 六 .env.pre ：预发布构建配置
-### 七 .env.prod ：线上构建配置
-### 八 .env.test ：测试环境构建配置
+### ~~五 .env.local ：本地构建配置~~
+### ~~六 .env.pre ：预发布构建配置~~
+### ~~七 .env.prod ：线上构建配置~~
+### ~~八 .env.test ：测试环境构建配置~~
 ### 九 .eslintrc.js ：eslint规则配置
+### 九 .gitignore ：禁止提交到github/gitlab的项目文件
 ### 十 .prettierrc ：vscode编辑器用于自动格式化代码的配置文件
 ### 十一 babel.config.js ：babel配置文件
 ### 十二 cypress.json ：e2e端到端测试配置文件
