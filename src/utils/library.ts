@@ -1,8 +1,8 @@
 import Cookies from 'js-cookie' // 第三方cookie插件：文档地址：https://github.com/js-cookie/js-cookie
-import { pluginInfo } from '@/config'
+import { projectInfo } from '@/config'
 
 // 当前项目名称
-const projectName: string = pluginInfo.projectName
+const projectName: string = projectInfo.projectName
 
 // 判断是否是pc端
 function isPC(): boolean {
